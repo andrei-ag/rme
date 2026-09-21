@@ -105,6 +105,9 @@ The engine never mutates the original. It transcribes, mutates, translates, and 
 - `use_emul` — emulator.
 - `use_borland_c_junk` — BC31-style junk.
 
+## Status
+Prototype. **Version 1.07a (alpha).** Later versions are lost; a search is ongoing.
+
 ## Disclaimer
 For educational and historical purposes only. Do not use for malicious purposes.
 
