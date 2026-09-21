@@ -158,4 +158,4 @@ Version 1.07a (alpha). Later versions are lost; a search is ongoing.
 For educational and historical purposes only. Do not use for malicious purposes.
 
 ## Authors
-Andrei AG & MM. © Copyleft 2000-2001, /MY.
+Andrei AG & MM. © Copyleft 2000-2001.
