@@ -135,7 +135,7 @@ In RME:
 The engine never mutates the original. It transcribes, mutates, translates, and only then fixes the result via reverse transcription. The metaphor is not decoration — it is a precise model of the metamorphic process.
 
 ## Build and run
-- Assembler: TASM/MASM, 16-bit, `.386`.
+- Assembler: TASM, 16-bit, `.386`.
 - `RME.ASM`, `RME2.ASM`, `RME3.ASM` — test wrappers.
 - Assemble, run in DOS/DOSBox.
 - Output: `rme_test.com`, `rmetest2.com`, `rmetest3.com`, `.dmp` dumps.
