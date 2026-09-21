@@ -77,15 +77,61 @@ In RME:
 ### Full cycle
 
 ```
-DNA_buffer ──(init_mRNA_entry)──▶ mRNA_buffer
-     ▲                                  │
-     │                                  │  translate_*
-     │                                  ▼
-     │                            temp_skeleton
-     │                                  │
-     │                                  │  ref_fixup
-     │                                  ▼
-     └──────(rna2dna)──────────  new skeleton
+┌─────────────────────────────────────────────────────────────────────┐
+│  Input: binary skeleton                                             │
+└───────────────────────────────┬─────────────────────────────────────┘
+                                │
+                                ▼
+            ┌───────────────────────────────────────┐
+            │  1. Disassemble binary skeleton →     │
+            │     instruction records (DNA)         │
+            └───────────────────┬───────────────────┘
+                                │
+                                ▼
+            ┌───────────────────────────────────────┐
+            │  2. Build IR: NA_entry → mRNA_entry   │
+            │     (transcription)                   │
+            └───────────────────┬───────────────────┘
+                                │
+                                ▼
+            ┌───────────────────────────────────────┐
+            │  3. Transform instructions            │
+            │                                       │
+            │  ┌─────────────────────────────────┐  │
+            │  │ 3a. Replace with semantically   │  │
+            │  │     equivalent variants         │  │
+            │  └─────────────────────────────────┘  │
+            │                                       │
+            │  ┌─────────────────────────────────┐  │
+            │  │ 3b. Optionally inject           │  │
+            |  │     HLL-style junk code         │  │
+            │  └─────────────────────────────────┘  │
+            │                                       │
+            │  ┌─────────────────────────────────┐  │
+            │  │ 3c. Eliminate Get-IP sequence   │  │
+            │  └─────────────────────────────────┘  │
+            └───────────────────┬───────────────────┘
+                                │
+                                ▼
+            ┌───────────────────────────────────────┐
+            │  4. Recalculate relative              │
+            |     jumps/calls and offsets           │
+            └───────────────────┬───────────────────┘
+                                │
+                                ▼
+            ┌───────────────────────────────────────┐
+            │  5. Emit reassembled binary           │
+            └───────────────────┬───────────────────┘
+                                │
+                                ▼
+            ┌───────────────────────────────────────┐
+            │  6. Optionally verify                 │
+            │     via emulator and dump debug info  │
+            └───────────────────┬───────────────────┘
+                                │
+┌───────────────────────────────▼─────────────────────────────────────┐
+│  Output: mutated binary (decryptor + encrypted/mutated code + data) │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 The engine never mutates the original. It transcribes, mutates, translates, and only then fixes the result via reverse transcription. The metaphor is not decoration — it is a precise model of the metamorphic process.
@@ -106,7 +152,7 @@ The engine never mutates the original. It transcribes, mutates, translates, and 
 - `use_borland_c_junk` — BC31-style junk.
 
 ## Status
-Prototype. **Version 1.07a (alpha).** Later versions are lost; a search is ongoing.
+Version 1.07a (alpha). Later versions are lost; a search is ongoing.
 
 ## Disclaimer
 For educational and historical purposes only. Do not use for malicious purposes.
