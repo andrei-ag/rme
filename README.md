@@ -1,8 +1,6 @@
 # Russian_Mutant, Engine (RME) aka BAME II
 
-**Metamorphic recompiler for x86 DOS code. Historical artifact, 2000–2001.**
-
-RME is a metamorphic engine for 16-bit DOS x86.
+**Metamorphic recompiler for x86 DOS code. Designed in 2000-2001.**
 
 ## What it is
 - An engine that reassembles binary code while preserving semantics.
@@ -158,4 +156,4 @@ Version 1.07a (alpha). Later versions are lost; a search is ongoing.
 For educational and historical purposes only. Do not use for malicious purposes.
 
 ## Authors
-Andrei AG & MM. © Copyleft 2000-2001.
+© Copyleft 2000-2001. Andrei AG & MM.
