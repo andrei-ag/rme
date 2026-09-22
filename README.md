@@ -1,4 +1,4 @@
-# Russian_Mutant, Engine (RME) aka BAME II
+# RME
 
 **Metamorphic recompiler for x86 DOS code. Designed in 2000-2001.**
 
