@@ -23,6 +23,8 @@ RME is an independent implementation, built around the same time as both, target
 
 **Comparison with open-source transformation/protection tools**
 
+The table below lines up RME against later tools solving a related problem, for reference — not as peers. The gap is large and uneven: 6 years to ReWolf's x86 Virtualizer, 9 to O-LLVM, 13 to Tigress — RME predates virtualization-based obfuscation and anti-emulation techniques becoming standard tools of the trade, which the ❌ rows below reflect as a timing gap, not a design shortcoming.
+
 | Criterion | RME | O-LLVM | Tigress | ReWolf x86 Virtualizer |
 |---|---|---|---|---|
 | **Target platform** | DOS (16-bit, COM) | any LLVM target | any (C source) | Windows (PE) |
